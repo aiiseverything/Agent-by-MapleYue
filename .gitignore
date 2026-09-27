@@ -1,0 +1,28 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+
+.venv/
+venv/
+env/
+
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# runtime artifacts
+.runs/
+traces/
+*.trace.jsonl
+*.log
+.liteagent/
+
+# local secrets -- never commit
+.env
+*.env
+!env.sh

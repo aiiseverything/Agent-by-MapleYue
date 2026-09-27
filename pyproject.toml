@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "liteagent"
+version = "0.1.0"
+description = "A lightweight, dependency-free Agent Harness: LLM abstraction, tool system, memory, ReAct loop and multi-agent orchestration"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "liteagent" }]
+keywords = ["llm", "agent", "react", "langchain", "harness", "multi-agent"]
+
+# ---------------------------------------------------------------------------
+# Core has ZERO third-party dependencies. Everything below is an *optional*
+# accelerator: the framework probes for it at import time and silently falls
+# back to a pure-stdlib implementation when it is absent.
+# ---------------------------------------------------------------------------
+dependencies = []
+
+[project.optional-dependencies]
+# Faster vector math (falls back to pure-Python cosine similarity).
+numpy = ["numpy>=1.20"]
+# Nicer terminal rendering (falls back to plain ANSI / plain text).
+pretty = ["rich>=12.0"]
+# Real HTTP transports for the OpenAI / Anthropic providers.
+# (Falls back to urllib.request, which is always available.)
+http = ["requests>=2.25"]
+# YAML config files.
+yaml = ["PyYAML>=5.4"]
+all = ["numpy>=1.20", "rich>=12.0", "requests>=2.25", "PyYAML>=5.4"]
+
+[project.scripts]
+liteagent = "liteagent.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["liteagent*"]
+
+[tool.black]
+line-length = 100
+target-version = ["py39"]
