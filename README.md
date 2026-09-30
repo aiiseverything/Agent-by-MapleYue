@@ -10,6 +10,11 @@ Python 3.10  |  Zero Third-Party Dependency  |  41 modules / 24,765 lines  |  Re
 
 > 上面那行是纯文本 badges（刻意不引外链图片：本项目在无外网环境下开发，README 里不放会 404 的图）。
 
+> 🎓 **对 LLM Agent 零基础？从 [`docs/learning/`](docs/learning/README.md) 开始。**
+> 那是一套 12 篇、约 5100 行的中文学习手册：既讲 Agent 的通用概念（LLM 的局限、
+> ReAct 循环、工具调用、记忆、多 Agent），又逐层对照本项目的真实代码，
+> 每章都带可运行的命令和自测题。全部离线可跑，不需要 API key。
+
 ---
 
 ## 1. 核心特性
@@ -421,6 +426,7 @@ trace 字段全量可控。**性能只排第四，而且只有一格站得住**�
 | `docs/BUILD_LOG.md` | 搭建过程记录：环境侦察、踩坑、每一步「为什么」 | 存在（行数会随编辑漂移，本轮实测 571 行） |
 | `docs/TOOLS.md` | 工具作者指南（`retryable` / `idempotent` 清单等） | 存在（966 行） |
 | `docs/INTERVIEW.md` | 面试能力清单与话术 | 存在（1345 行） |
+| `docs/learning/` | **零基础学习手册**（12 篇 / 约 5100 行）：概念 → 代码 → 练习，含术语表 | 从 [`docs/learning/README.md`](docs/learning/README.md) 进入 |
 
 > 上表的**行数是快照**（实测于 2026-09-27 04:2x UTC），会随文档编辑漂移 ——
 > 需要准确值时请自己 `wc -l docs/*.md`，别引用这个数字。
